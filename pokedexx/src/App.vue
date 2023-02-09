@@ -1,5 +1,6 @@
 <script setup>
   import axios from 'axios'
+  import Pokemon from './components/Pokemon.vue'
 </script>
 
 <script>
@@ -13,12 +14,15 @@
         this.pokemons = res.data.results
         console.log(this.pokemons)
       })
+    },
+    components: {
+      Pokemon
     }
   }
 </script>
 
 <template>
-  <header>
-
-  </header>
+  <div v-for="(poke, index) in pokemons" :key="index">
+    <Pokemon :name="poke.name" :url="poke.url" :num="index+1"/>
+  </div>
 </template>
