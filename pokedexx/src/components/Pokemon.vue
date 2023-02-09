@@ -25,6 +25,17 @@ export default {
         num: Number,
         name: String,
         url: String
+    },
+    methods: {
+        mudarSprite: function(){
+            if(this.isFront){
+                this.isFront = false
+                this.currentImg = this.pokemon.back
+            } else {
+                this.isFront = true
+                this.currentImg = this.pokemon.front
+            }
+        }
     }
 }
 </script>
@@ -42,6 +53,9 @@ export default {
                     <h1>Pokemon: {{ num }} {{ name }}</h1>
                     <small>Tipo: {{ pokemon.type }}</small>
                 </div>
+            </div>
+            <div class="content">
+                <button class="button is-primary is-fullwidth" @click="mudarSprite">Mudar Sprite</button>
             </div>
         </div>
     </div>
