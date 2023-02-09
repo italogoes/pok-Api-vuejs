@@ -18,6 +18,8 @@
       axios.get('https://pokeapi.co/api/v2/pokemon?limit=50&offset=0').then(res => {
         this.pokemons = res.data.results
         this.PokemonsFiltrados = res.data.results
+
+        console.log(this.PokemonsFiltrados)
       })
     },
     components: {

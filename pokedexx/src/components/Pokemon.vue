@@ -8,6 +8,7 @@ export default {
             this.pokemon.front = res.data.sprites.front_default
             this.pokemon.back = res.data.sprites.back_default
             this.currentImg = this.pokemon.front
+            this.pokemon.abilities = res.data.abilities.map(ability => ability.ability.name)
         })
     },
     data() {
@@ -16,6 +17,7 @@ export default {
             currentImg: '',
             pokemon: {
                 type: '',
+                abilities: [],
                 front: '',
                 back: ''
             }
@@ -51,13 +53,17 @@ export default {
             <div class="media">
                 <div class="media-content">
                     <h1>Pokemon: {{ num }} {{ name }}</h1>
-                    <small>Tipo: {{ pokemon.type }}</small>
+                    
                 </div>
             </div>
             <div class="content">
+                <p><b> Tipo: {{ pokemon.type }}</b></p>
+                <p><b>Habilidades:</b></p>
+                <ul>
+                    <li v-for="ability in pokemon.abilities">{{ ability }}</li>
+                </ul>
                 <button class="button is-primary is-fullwidth" @click="mudarSprite">Mudar Sprite</button>
             </div>
         </div>
     </div>
 </template>
-
