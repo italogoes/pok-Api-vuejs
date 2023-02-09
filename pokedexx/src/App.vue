@@ -1,6 +1,7 @@
 <script setup>
   import axios from 'axios'
   import Pokemon from './components/Pokemon.vue'
+  import './assets/styles/index.sass'
 </script>
 
 <script>
@@ -46,7 +47,7 @@
     placeholder="Buscar pokemon pelo nome" 
     v-model="busca" class="input is-rounded"
     >
-    <button class="button btn-pesquisa is-primary is-fullwidth" @click="buscar">Buscar</button>
+    <button class="button btn-pesquisa is-primary" @click="buscar">Buscar</button>
 
     <div class="flex is-half is-offset-one-quarter">
       <div v-for="(poke, index) in PokemonsFiltrados" :key="poke.url">
@@ -55,44 +56,3 @@
     </div>
   </div>
 </template>
-
-<style>
-html,body{
-  height: 100%;
-  background-color: #242424;
-}
-
-#app{
-  max-width: 1400px;
-  margin: auto;
-}
-
-.logo{
-  font-size: 55px;
-  text-align: center;
-  padding: 30px 0;
-  color: #fff;
-}
-
-input[type=text]{
-  background-color: #3e3e3e;
-  color: #fff;
-  margin-bottom: 10px;
-  border: 1px solid rgb(33, 33, 144);
-}
-
-.btn-pesquisa{
-  margin-bottom: 50px;
-  border-radius: 20px !important;
-}
-
-input[type=text]::placeholder{
-  color: #a1a1a1;
-}
-
-.flex{
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-</style>

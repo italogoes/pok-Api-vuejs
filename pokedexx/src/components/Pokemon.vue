@@ -1,5 +1,6 @@
 <script>
 import axios from 'axios'
+import '../assets/styles/index.sass'
 export default {
     created: function () {
         axios.get(this.url).then(res => {
@@ -60,18 +61,3 @@ export default {
     </div>
 </template>
 
-<style>
-.card{
-    min-width: 250px;
-    min-height: 350px;
-    margin: 5px;
-    background-color: #000227 !important;
-    color: #fff !important;
-}
-
-img{
-    max-width: 150px !important;
-    margin: auto;
-    padding-top: 50px;
-}
-</style>
