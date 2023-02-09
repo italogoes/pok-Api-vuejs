@@ -5,6 +5,7 @@
 
 <script>
   export default {
+    name: 'App',
     data(){
       pokemons: []
     },
@@ -22,7 +23,27 @@
 </script>
 
 <template>
-  <div v-for="(poke, index) in pokemons" :key="index">
-    <Pokemon :name="poke.name" :url="poke.url" :num="index+1"/>
+  <div id="app">
+    <div class="flex is-half is-offset-one-quarter">
+      <div v-for="(poke, index) in pokemons" :key="index">
+        <Pokemon :name="poke.name" :url="poke.url" :num="index+1"/>
+      </div>
+    </div>
   </div>
 </template>
+
+<style>
+body{
+  background-color: #242424;
+}
+#app{
+  max-width: 1400px;
+  margin: auto;
+}
+
+.flex{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+</style>
