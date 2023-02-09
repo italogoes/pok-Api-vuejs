@@ -66,12 +66,12 @@ export default {
     min-width: 250px;
     min-height: 350px;
     margin: 5px;
-    background-color: #000227;
-    color: #fff;
+    background-color: #000227 !important;
+    color: #fff !important;
 }
 
 img{
-    max-width: 150px;
+    max-width: 150px !important;
     margin: auto;
     padding-top: 50px;
 }

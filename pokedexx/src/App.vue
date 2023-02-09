@@ -8,6 +8,7 @@
     name: 'App',
     data(){
       pokemons: []
+      busca: ''
     },
     created: function(){
       axios.get('https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0').then(res => {
@@ -23,8 +24,10 @@
 </script>
 
 <template>
-  <div id="app">
+  <div id="ap">
     <h2 class="logo">Lista de Pokemons</h2>
+    <input class="input is-rounded" type="text" placeholder="Buscar pokemon pelo nome" v-model="busca">
+    <button class="button btn-pesquisa is-primary is-fullwidth" @click="mudarSprite">Buscar</button>
     <div class="flex is-half is-offset-one-quarter">
       <div v-for="(poke, index) in pokemons" :key="index">
         <Pokemon :name="poke.name" :url="poke.url" :num="index+1"/>
@@ -48,6 +51,22 @@ body{
   text-align: center;
   padding: 30px 0;
   color: #fff;
+}
+
+input[type=text]{
+  background-color: #3e3e3e;
+  color: #fff;
+  margin-bottom: 10px;
+  border: 1px solid rgb(33, 33, 144);
+}
+
+.btn-pesquisa{
+  margin-bottom: 50px;
+  border-radius: 20px !important;
+}
+
+input[type=text]::placeholder{
+  color: #a1a1a1;
 }
 
 .flex{
