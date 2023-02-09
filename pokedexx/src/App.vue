@@ -24,6 +24,7 @@
 
 <template>
   <div id="app">
+    <h2 class="logo">Lista de Pokemons</h2>
     <div class="flex is-half is-offset-one-quarter">
       <div v-for="(poke, index) in pokemons" :key="index">
         <Pokemon :name="poke.name" :url="poke.url" :num="index+1"/>
@@ -36,9 +37,17 @@
 body{
   background-color: #242424;
 }
+
 #app{
   max-width: 1400px;
   margin: auto;
+}
+
+.logo{
+  font-size: 55px;
+  text-align: center;
+  padding: 30px 0;
+  color: #fff;
 }
 
 .flex{
