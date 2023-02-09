@@ -7,7 +7,6 @@ export default {
             this.pokemon.front = res.data.sprites.front_default
             this.pokemon.back = res.data.sprites.back_default
             this.currentImg = this.pokemon.front
-            console.log(this.pokemon)
         })
     },
     data() {
